@@ -9,6 +9,7 @@ import { CreateUserInput } from './dto/input/create-user.input';
 import { UpdateUserInput } from './dto/input/update-user.input';
 import { DeleteUserInput } from './dto/input/delete-user.input';
 import { GqlAuthGuard } from 'src/auth/guards/gql-auth.guard';
+import { CurrentUser } from 'src/auth/current-user.decorator';
 
 @Resolver(() => User)
 export class UsersResolver {
@@ -16,7 +17,9 @@ export class UsersResolver {
 
   @Query(() => User, { name: 'user', nullable: true })
   @UseGuards(GqlAuthGuard)
-  getUser(@Args() getUserArgs: GetUserArgs): User {
+  getUser(@CurrentUser() user: User, @Args() getUserArgs: GetUserArgs): User {
+    console.log({ user });
+
     return this.usersService.getUser(getUserArgs);
   }
 
