@@ -155,13 +155,25 @@ mutation {
 
 Here are some screenshots of the project:
 
-## Create User Mutation
+### Create User Mutation
 
 ![Create User Mutation](public/assets/create_user.png)
 
-## Update User Mutation
+### Update User Mutation
 
 ![Update User Mutation](public/assets/update_user.png)
+
+### Postman Auth Login
+
+![Postman Login](public/assets/postman_auth_login.png)
+
+### GraphQL When queried UnAuthorized
+
+![Postman Login](public/assets/graphql_unauthorized.png)
+
+### GraphQL with Authorization Header
+
+![Postman Login](public/assets/graphql_is_auth.png)
 
 ## Contributing
 
