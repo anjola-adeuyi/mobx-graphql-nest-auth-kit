@@ -1,11 +1,8 @@
 import React from 'react';
+import { Auth } from '../auth/auth.component';
 
 const App: React.FC = () => {
-  return (
-    <div>
-      <p>mobx-graphql-nest-auth-kit</p>
-    </div>
-  );
+  return <Auth />;
 };
 
 export { App };
