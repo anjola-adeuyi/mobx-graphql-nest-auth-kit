@@ -79,6 +79,90 @@ cd frontend
 yarn start
 ```
 
+## GraphQL Query
+
+Visit http://localhost:3000/graphql
+
+### Create User
+
+```
+mutation {
+  createUser(createUserData: {email: "test@test.com", age: 23}) {
+    userId
+    email
+    age
+    isSubscribed
+  }
+
+}
+```
+
+### Get User
+
+```
+query {
+  user(userId: "787858a1-6e00-4fea-84df-ad4cf6ecadfc") {
+    userId
+    email
+    age
+    isSubscribed
+
+  }
+}
+```
+
+### Get Users
+
+```
+query {
+  users(userIds: ["787858a1-6e00-4fea-84df-ad4cf6ecadfc"]) {
+    userId
+    email
+    age
+    isSubscribed
+
+  }
+}
+```
+
+### Update User
+
+```
+mutation {
+  updateUser(updateUserData: {userId: "787858a1-6e00-4fea-84df-ad4cf6ecadfc", age: 55, isSubscribed: true}) {
+    userId
+    email
+    age
+    isSubscribed
+  }
+}
+```
+
+### Delete User
+
+```
+mutation {
+  deleteUser(deleteUserData: { userId: "787858a1-6e00-4fea-84df-ad4cf6ecadfc"}) {
+    userId
+    email
+    age
+    isSubscribed
+  }
+}
+```
+
+## Screenshots
+
+Here are some screenshots of the project:
+
+## Create User Mutation
+
+![Create User Mutation](public/assets/create_user.png)
+
+## Update User Mutation
+
+![Update User Mutation](public/assets/update_user.png)
+
 ## Contributing
 
 Contributions are welcome! Please open an issue or submit a pull request.
